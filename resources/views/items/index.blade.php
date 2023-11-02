@@ -1,5 +1,5 @@
 <x-layout>
-    @include('items.header')
+
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -9,22 +9,30 @@
                                 <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <div class="text-sm font-medium text-gray-900">
+                                                <div class="text-4xl">
                                                     Name
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <div class="text-sm font-medium text-gray-900">
+                                                <div class="text-4xl">
                                                    Quantity
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <div class="text-sm font-medium text-gray-900">
+                                                <div class="text-4xl">
                                                     Description
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="text-4xl">
+                                                    Actions
                                                 </div>
                                             </div>
                                         </td>

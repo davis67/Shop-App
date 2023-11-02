@@ -27,27 +27,31 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/images/download.png" alt="Laracasts Logo" width="100" height="16">
                 </a>
             </div>
-
-            <div class="mt-8 md:mt-0 flex items-center">
-                @auth
-                    <x-dropdown>
-                        <x-slot name="trigger">
-                            <button class="text-xs font-bold uppercase">
-                                Welcome, {{ auth()->user()->name }}!
-                            </button>
-                        </x-slot>
-
-                            <x-dropdown-item
+            <!-- Search -->
+            @auth
+        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
+            <form method="GET" action="/">
+         <input type="text"
+                       name="search"
+                       placeholder="Search Item by name"
+                       class="bg-transparent placeholder-black font-semibold text-sm"
+                       value="{{ request('search') }}"
+                >
+            </form>
+        </div>
+<button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase ">
+<x-dropdown-item
                                 href="/items/create"
                                 :active="request()->is('/items/create')"
                             >
                                 New Item
                             </x-dropdown-item>
-
-                        <x-dropdown-item
+</button>
+<button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase">
+<x-dropdown-item
                             href="#"
                             x-data="{}"
                             @click.prevent="document.querySelector('#logout-form').submit()"
@@ -58,7 +62,9 @@
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
                             @csrf
                         </form>
-                    </x-dropdown>
+</button>
+            <div class="mt-8 md:mt-0 flex items-center">
+               
                 @else
                     <a href="/register"
                        class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
