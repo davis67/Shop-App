@@ -24,7 +24,7 @@
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center">
+        <nav class="md:flex md:justify-between md:items-center bg-gray-300">
             <div>
                 <a href="/">
                     <img src="/images/download.png" alt="Laracasts Logo" width="100" height="16">
@@ -62,18 +62,19 @@
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
                             @csrf
                         </form>
-</button>
+                        </button>
+                        
             <div class="mt-8 md:mt-0 flex items-center">
-               
+            
                 @else
                     <a href="/register"
                        class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
-                        Register
+                        Sign Up
                     </a>
 
                     <a href="/login"
                        class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
-                        Log In
+                        Sign In
                     </a>
                 @endauth
              
