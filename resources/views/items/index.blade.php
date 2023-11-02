@@ -67,7 +67,6 @@
                                             <form  method="POST" action="/items/{{ $item->id }}">
                                                 @csrf
                                                 @method('DELETE')
-
                                                 <button type ="submit"onclick="confirmDelete()">Delete</button>
                                             </form>
                                             
