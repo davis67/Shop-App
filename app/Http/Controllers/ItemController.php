@@ -8,7 +8,6 @@ class ItemController extends Controller
 {
     public function index()
     {
-        $items = auth()->user()->items;
 return view('items.index', [
             'items' => Item::sortByNameAsc()->filter(
                         request(['search'])

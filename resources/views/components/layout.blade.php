@@ -43,7 +43,6 @@
                 >
             </form>
         </div>
-        @admin
 <button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase">
 <x-dropdown-item
                                 href="/items/create"
@@ -52,7 +51,6 @@
                                  Create New Item
                             </x-dropdown-item>
 </button>
-@endadmin
 <button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase">
 <x-dropdown-item
                             href="#"
