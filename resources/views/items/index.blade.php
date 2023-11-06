@@ -50,33 +50,28 @@
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a href="">
+                                                    
                                                         {{ $item->name }}
-                                                    </a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <div class="text-sm font-medium text-gray-900">
-                                                    <a href="">
+                                                <div class="text-sm font-medium text-gray-900"> 
                                                         {{ $item->quantity }}
-                                                    </a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a href="">
                                                         {{ $item->description }}
-                                                    </a>
                                                 </div>
                                             </div>
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <button class=" bg-green-500 px-3 py-2 text-blue-500 hover:text-blue-600 rounded-xl"><a href="/items/{{ $item->id }}/edit">Edit</a>
+                                            <button class="  px-3 py-2 text-blue-500  hover:text-blue-600 "><a href="/items/{{ $item->id }}/edit">Edit</a>
                                         </td></button>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
