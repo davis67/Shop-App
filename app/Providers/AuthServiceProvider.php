@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Support\Facades\Gate;
+use App\Models\User;
+ use Illuminate\Support\Facades\Gate;
+ use Illuminate\Support\Facades\Blade;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -22,5 +24,15 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Model::unguard();
+        
+    
+            Gate::define('admin', function (User $user) {
+                return $user->username === 'Rwamutwe';
+            });
+    
+            Blade::if('admin', function () {
+                return request()->user()?->can('admin');
+            });
+        }
     }
-}
+

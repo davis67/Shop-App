@@ -2,10 +2,11 @@
 
 <title>Shopping list</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<script src="JS/main.js"></script>
+<script src="js/main.js" defer></script>
 <style>
     html {
         scroll-behavior: smooth;
@@ -42,14 +43,16 @@
                 >
             </form>
         </div>
-<button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase ">
+        @admin
+<button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase">
 <x-dropdown-item
                                 href="/items/create"
                                 :active="request()->is('/items/create')"
                             >
-                                New Item
+                                 Create New Item
                             </x-dropdown-item>
 </button>
+@endadmin
 <button class="py-2 pl-3 pr-9 text-sm font-semibold Uppercase">
 <x-dropdown-item
                             href="#"
@@ -64,17 +67,16 @@
                         </form>
                         </button>
                         
-            <div class="mt-8 md:mt-0 flex items-center">
+            <div class="mt-8 md:mt-0 flex items-center px-3 py-2">
             
                 @else
                     <a href="/register"
                        class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
-                        Sign Up
+                        Register
                     </a>
-
                     <a href="/login"
-                       class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
-                        Sign In
+                       class="mr-8 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
+                        Log In
                     </a>
                 @endauth
              

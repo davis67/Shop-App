@@ -32,7 +32,15 @@
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-4xl">
-                                                    Actions
+                                                    Edit 
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="text-4xl">
+                                                    Delete
                                                 </div>
                                             </div>
                                         </td>
@@ -68,22 +76,24 @@
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <a href="/items/{{ $item->id }}/edit" class="text-blue-500 hover:text-blue-600">Edit</a>
-                                        </td>
+                                            <button class=" bg-green-500 px-3 py-2 text-blue-500 hover:text-blue-600 rounded-xl"><a href="/items/{{ $item->id }}/edit">Edit</a>
+                                        </td></button>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <form  method="POST" action="/items/{{ $item->id }}">
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type ="submit"onclick="confirmDelete()">Delete</button>
+                                                <button  class=" px-3 py-2 bg-red-500 rounded-xl" type ="submit" class ="btn-delete" onclick="return confirmDelete()">Delete</button>
                                             </form>
                                             
                                         </td>
                                     </tr>
+                                    
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $items->links() }}
                     </div>
                 </div>
             </div>
